@@ -9,3 +9,7 @@ test("correctly convert time after 12:00", function() {
 test("can correctly convert morning time", function() {
     assert.equal(formatAs12HourClock("08:00"), "08:00 am");
 });
+
+// test("can correctly convert midnight", function(){
+//     assert.equal(formatAs12HourClock("00:00"),"12:00 am");
+// });
