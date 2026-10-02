@@ -14,3 +14,5 @@ function formatAs12HourClock(time) {
 
 console.log(formatAs12HourClock("23:00"));
 console.log(formatAs12HourClock("14:00"));
+
+export {formatAs12HourClock}
