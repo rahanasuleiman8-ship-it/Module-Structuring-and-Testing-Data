@@ -12,8 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "five": "^0.8.0",
-    "is-odd": "^3.0.1",
-    "jest": "^29.7.0"
+    "is-odd": "^3.0.1"
   },
   "repository": {
     "type": "git",
@@ -22,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/rahanasuleiman8-ship-it/Module-Structuring-and-Testing-Data/issues"
   },
-  "homepage": "https://github.com/rahanasuleiman8-ship-it/Module-Structuring-and-Testing-Data#readme"
+  "homepage": "https://github.com/rahanasuleiman8-ship-it/Module-Structuring-and-Testing-Data#readme",
+  "devDependencies": {
+    "jest": "^30.5.2"
+  }
 }
