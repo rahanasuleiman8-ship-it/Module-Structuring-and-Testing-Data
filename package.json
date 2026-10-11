@@ -11,6 +11,7 @@
   "author": "Code Your Future",
   "license": "ISC",
   "dependencies": {
+    "five": "^0.8.0",
     "is-odd": "^3.0.1",
     "jest": "^29.7.0"
   },
