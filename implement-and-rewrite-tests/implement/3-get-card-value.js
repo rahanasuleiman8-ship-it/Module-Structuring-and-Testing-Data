@@ -24,5 +24,28 @@
 // execute the code to ensure all tests pass.
 
 export function getCardValue(card) {
-  // TODO: Implement this function
+  if (typeof card !== "string") {
+    throw new Error(`Expected a string, but got ${typeof card}`);
+  }
+
+  const cardRegex = /^(10|[2-9]|[AJQK])([♠♥♦♣])$/;
+  const match = card.match(cardRegex);
+
+  if (!match) {
+    throw new Error(
+      `Expected a card rank followed by a suit, but got "${card}"`
+    );
+  }
+
+  const rank = match[1];
+
+  if (rank === "A") {
+    return 11;
+  }
+
+  if (["J", "Q", "K"].includes(rank)) {
+    return 10;
+  }
+
+  return Number(rank);
 }
