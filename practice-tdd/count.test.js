@@ -16,6 +16,14 @@ test("should count multiple occurrences of a character", () => {
   expect(count).toEqual(5);
 });
 
+// Scenario: Mixed Occurrences in a Longer String
+test("should count occurrences when character exists in parts of the string", () => {
+  const str = "hello";
+  const char = "l";
+  const count = countChar(str, char);
+  expect(count).toEqual(2);
+});
+
 // Scenario: No Occurrences
 // Given the input string `str`,
 // And a character `char` that does not exist within `str`.
@@ -24,6 +32,14 @@ test("should count multiple occurrences of a character", () => {
 test("should return 0 when the character is not found in the string", () => {
   const str = "hello";
   const char = "z";
+  const count = countChar(str, char);
+  expect(count).toEqual(0);
+});
+
+// Scenario: Empty String
+test("should return 0 when counting inside an empty string", () => {
+  const str = "";
+  const char = "a";
   const count = countChar(str, char);
   expect(count).toEqual(0);
 });
