@@ -1,53 +1,40 @@
-import assert from "node:assert";
-import test from "node:test";
+import assert from "node:assert/strict";
+import { describe, test } from "node:test";
 
 import { getAngleType } from "../implement/1-get-angle-type.js";
 
-// Example: Identify Right Angles
-
-test("Classifies right angles", () => {
-  const right = getAngleType(90);
-  assert.equal(right, "Right angle");
-});
-
 describe("getAngleType", () => {
-  // Acute Angles (0° < angle < 90°)
   test("Classifies acute angles", () => {
-    expect(getAngleType(1)).toEqual("Acute angle");
-    expect(getAngleType(45)).toEqual("Acute angle");
-    expect(getAngleType(89)).toEqual("Acute angle");
-    expect(getAngleType(89.9)).toEqual("Acute angle");
+    assert.strictEqual(getAngleType(1), "Acute angle");
+    assert.strictEqual(getAngleType(45), "Acute angle");
+    assert.strictEqual(getAngleType(89), "Acute angle");
+    assert.strictEqual(getAngleType(89.9), "Acute angle");
   });
 
-  // Right Angles (angle === 90°)
   test("Classifies right angles", () => {
-    expect(getAngleType(90)).toEqual("Right angle");
+    assert.strictEqual(getAngleType(90), "Right angle");
   });
 
-  // Obtuse Angles (90° < angle < 180°)
   test("Classifies obtuse angles", () => {
-    expect(getAngleType(90.1)).toEqual("Obtuse angle");
-    expect(getAngleType(135)).toEqual("Obtuse angle");
-    expect(getAngleType(179.9)).toEqual("Obtuse angle");
+    assert.strictEqual(getAngleType(90.1), "Obtuse angle");
+    assert.strictEqual(getAngleType(135), "Obtuse angle");
+    assert.strictEqual(getAngleType(179.9), "Obtuse angle");
   });
 
-  // Straight Angles (angle === 180°)
   test("Classifies straight angles", () => {
-    expect(getAngleType(180)).toEqual("Straight angle");
+    assert.strictEqual(getAngleType(180), "Straight angle");
   });
 
-  // Reflex Angles (180° < angle < 360°)
   test("Classifies reflex angles", () => {
-    expect(getAngleType(180.1)).toEqual("Reflex angle");
-    expect(getAngleType(270)).toEqual("Reflex angle");
-    expect(getAngleType(359.9)).toEqual("Reflex angle");
+    assert.strictEqual(getAngleType(180.1), "Reflex angle");
+    assert.strictEqual(getAngleType(270), "Reflex angle");
+    assert.strictEqual(getAngleType(359.9), "Reflex angle");
   });
 
-  // Invalid & Boundary Cases (<= 0° or >= 360°)
   test("Classifies invalid angles and exact boundaries", () => {
-    expect(getAngleType(0)).toEqual("Invalid angle");
-    expect(getAngleType(-45)).toEqual("Invalid angle");
-    expect(getAngleType(360)).toEqual("Invalid angle");
-    expect(getAngleType(400)).toEqual("Invalid angle");
+    assert.strictEqual(getAngleType(0), "Invalid angle");
+    assert.strictEqual(getAngleType(-45), "Invalid angle");
+    assert.strictEqual(getAngleType(360), "Invalid angle");
+    assert.strictEqual(getAngleType(400), "Invalid angle");
   });
 });
